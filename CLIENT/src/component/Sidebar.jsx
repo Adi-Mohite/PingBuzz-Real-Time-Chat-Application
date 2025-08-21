@@ -67,7 +67,7 @@ const Sidebar = () => {
             />
           </div>
           <div className="hidden lg:block text-left min-w-0">
-            <div className="font-medium truncate">{aiBot.fullName}</div>
+            <div className="font-medium truncate flex items-center gap-1">{aiBot.fullName} <img src="./AI ICON.png" alt="AI Icon" className="w-6 h-6" /></div>
             <div className="text-lx bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent duration-100">virtual assistant</div>
           </div>
         </button>

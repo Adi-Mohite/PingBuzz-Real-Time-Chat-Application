@@ -37,7 +37,7 @@ const LoginPage = () => {
               <div className="rounded-xl bg-transparent flex items-center justify-center animate-bounce space-y-0.5">
                 <img
                   src="/PingBuzzLogo2.png"
-                  className="w-34 h-40 object-contain"
+                  className="w-36 h-40 sm:w-36 sm:h-28 md:w-44 md:h-32 object-contain"
                   alt="Logo"
                 />
               </div>

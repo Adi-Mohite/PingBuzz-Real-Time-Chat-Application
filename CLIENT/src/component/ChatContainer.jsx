@@ -138,15 +138,15 @@ const ChatContainer = () => {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       p: ({ children }) => (
-                        <p className="text-sm text-gray-700">{children}</p>
+                        <p className="text-sm text-white">{children}</p>
                       ),
                       code: ({ inline, children }) =>
                         inline ? (
-                          <code className="bg-gray-700 text-xs px-1 rounded">
+                          <code className="bg-white text-xs px-1 rounded">
                             {children}
                           </code>
                         ) : (
-                          <pre className="bg-gray-700 p-2 rounded overflow-x-auto">
+                          <pre className="bg-white p-2 rounded overflow-x-auto">
                             <code>{children}</code>
                           </pre>
                         ),
@@ -170,7 +170,7 @@ const ChatContainer = () => {
                 <img src="/AI BOT.png" alt="AI Avatar" />
               </div>
             </div>
-            <div className="chat-bubble flex items-center gap-2 text-sm text-gray-700">
+            <div className="chat-bubble flex items-center gap-2 text-sm text-black">
               <span>AI is typing</span>
               <span className="animate-ping text-xl">✨</span>
             </div>
