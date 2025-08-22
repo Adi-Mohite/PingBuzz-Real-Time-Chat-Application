@@ -150,12 +150,12 @@ const LoginPage = () => {
       </div>
 
       {/* Right side Animation (only for large screens) */}
-      <div className="hidden lg:flex items-center justify-center">
+      <div className="hidden lg:flex items-center justify-center w-full h-screen">
         <Lottie
           animationData={AnimationData}
           loop
           autoplay
-          className="w-full max-w-lg"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

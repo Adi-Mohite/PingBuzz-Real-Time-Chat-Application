@@ -49,7 +49,7 @@ const SignupPage = () => {
     <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 pt-14">
       {/* Left side - Form */}
       <div className="flex flex-col justify-center items-center p-4 sm:p-8 lg:p-12">
-        <div className="w-full bg-white rounded-2xl p-4 sm:p-6 md:p-8 max-w-md space-y-6 sm:space-y-8">
+        <div className="w-full bg-white rounded-2xl p-4 sm:p-6 md:p-8 max-w-md space-y-4">
           <div className="text-center mb-2">
             <div className="flex flex-col items-center group space-y-0.5">
               <div className="rounded-2xl bg-transparent flex items-center justify-center animate-bounce">
@@ -174,12 +174,13 @@ const SignupPage = () => {
       </div>
 
       {/* Right side - Lottie for Desktop */}
-      <div className="hidden lg:flex items-center justify-center p-6">
+      {/* Right side - Lottie for Desktop */}
+      <div className="hidden lg:flex items-center justify-center w-full h-screen">
         <Lottie
           animationData={AnimationData}
           loop
           autoplay
-          className="w-full max-w-lg h-auto"
+          className="w-full h-full object-contain"
         />
       </div>
 
