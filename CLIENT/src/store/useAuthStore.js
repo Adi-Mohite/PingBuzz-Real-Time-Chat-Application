@@ -7,7 +7,7 @@ import {
 } from "../utils/cryptoUtils";
 import toast from "react-hot-toast";
 
-const BASE_URL = "http://localhost:5001"; // no /api here for socket
+const BASE_URL = "https://pingbuzz.onrender.com"; // no /api here for socket
 
 const storePrivateKeyInSession = (key) => {
   sessionStorage.setItem("privateKey", JSON.stringify(Array.from(key)));
