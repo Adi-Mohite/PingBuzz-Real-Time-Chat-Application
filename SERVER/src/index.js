@@ -13,10 +13,13 @@ import aiRoutes from "./routes/ai.route.js";
 const PORT = process.env.PORT || 4001;
 app.use(express.json({limit :'10mb'}));
 app.use(cookieParser());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ping-buzz.vercel.app"
+];
 app.use(cors({
-  origin:"http://localhost:5173",
-  "https://ping-buzz.vercel.app",
-  credentials:true}
+  origin:allowedOrigins,
+  credentials:true},
 ));
 
 app.use("/api/ai", aiRoutes);
