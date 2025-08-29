@@ -15,7 +15,7 @@ app.use(express.json({limit :'10mb'}));
 app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://ping-buzz.vercel.app"
+  "https://pingbuzz.onrender.com"
 ];
 app.use(cors({
   origin:allowedOrigins,
