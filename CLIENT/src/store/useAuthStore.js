@@ -109,21 +109,18 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-  logout: async () => {
-    try {
-      await axiosInstance.get("/auth/logout");
-      clearPrivateKeyFromSession();
-      sessionStorage.removeItem("pageReloaded");
-      set({ authUser: null, privateKey: null, publicKey: null });
-
-      get().disconnectSocket();
-    } catch (err) {
-      console.error("⚠️ Logout request failed", err);
-    }
-
-    clearPrivateKeyFromSession();
+logout: async () => {
+  try {
+    await axiosInstance.get("/auth/logout"); // make sure this clears server cookie/session
+  } catch (err) {
+    console.error("⚠️ Logout request failed", err);
+  } finally {
+    sessionStorage.clear(); // clear everything stored in session
     set({ authUser: null, privateKey: null, publicKey: null });
-  },
+    get().disconnectSocket();
+  }
+},
+
 
   checkAuth: async () => {
     set({ isCheckingAuth: true });
@@ -151,19 +148,6 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-  // checkAuth: async () => {
-  //   set({ isCheckingAuth: true });
-  //   try {
-  //     const res = await axiosInstance.get("/auth/check");
-  //     set({ authUser: res.data });
-  //     get().connectSocket();
-  //   } catch (err) {
-  //     console.warn("Auth check failed:", err);
-  //     set({ authUser: null });
-  //   } finally {
-  //     set({ isCheckingAuth: false });
-  //   }
-  // },
 
   rehydrateKeyPair: () => {
     const storedKey = sessionStorage.getItem("privateKey");
